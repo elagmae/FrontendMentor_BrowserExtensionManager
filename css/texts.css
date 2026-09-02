@@ -1,0 +1,23 @@
+#filter-buttons button
+{
+    font-size:var(--paragraph-font-size);
+    font-weight:500;
+}
+
+h1
+{
+    font-size:calc(var(--paragraph-font-size)*1.7);
+    font-weight:700;
+}
+
+h2
+{
+    font-size:var(--paragraph-font-size);
+    font-weight:700;
+}
+
+p
+{
+    font-size:calc(var(--paragraph-font-size)/1.2);
+    font-weight:400;
+}

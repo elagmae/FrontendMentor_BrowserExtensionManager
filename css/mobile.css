@@ -1,0 +1,9 @@
+@media (max-width:600px)
+{
+    nav
+    {
+        flex-direction:column !important;
+        margin-bottom:50px;
+    }
+}
+

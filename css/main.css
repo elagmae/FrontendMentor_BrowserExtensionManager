@@ -19,6 +19,7 @@ body
 header
 {
     display:flex;
+    box-sizing: border-box;
     justify-content: space-between;
     align-items: center;
 
@@ -27,6 +28,9 @@ header
 
     padding:10px;
     border-radius: 20px;
+
+    border:solid var(--border-color) 1px;
+    box-shadow: var(--box-shadow-size) var(--box-shadox-color);
 }
 
 header svg path:nth-child(2)
@@ -37,6 +41,12 @@ header svg path:nth-child(2)
 header svg path:nth-child(1)
 {
     fill: var(--logo-color);
+}
+
+#logo
+{
+    height:35px;
+    width:auto;
 }
 
 #theme-toggle
@@ -84,13 +94,15 @@ nav
 #extension-list
 {
     display:grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    box-sizing: border-box;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     grid-gap: 20px;
 }
 
 .extension
 {
     position:relative;
+    box-sizing: border-box;
     background-color: var(--card-background-color);
     padding:15px;
 
