@@ -1,0 +1,61 @@
+body
+{
+    --main-padding:50px 140px 50px 140px;
+    --font-family: 'Noto Sans', sans-serif;
+}
+
+.dark-mode
+{
+    --background-color-top: #040918;
+    --background-color-bottom: #091540;
+
+    --border-color:hsl(226, 11%, 37%);
+    --box-shadox-color: hsl(227, 75%, 14%);
+    --box-shadow-size: 0px 2px 2px 0px;
+
+    --logo-color:hsl(3, 86%, 64%);
+    --logo-text-color:hsl(200, 60%, 99%);
+
+    --card-background-color:hsl(226, 25%, 17%);
+
+    --text-color: hsl(200, 60%, 99%);
+    --inverted-text-color: hsl(227, 75%, 14%);
+
+    --toggle-active-color: hsl(3, 86%, 64%);
+    --toggle-inactive-color:hsl(226, 11%, 37%);
+
+    --button-inactive-color: hsl(225, 23%, 24%);
+    --button-active-color: hsl(3, 86%, 64%);
+
+    --remove-button-color: hsl(226, 25%, 17%);
+
+    --theme-button-color:hsl(225, 23%, 24%);
+}
+
+.light-mode
+{
+    --background-color-top: #EBF2FC;
+    --background-color-bottom: #EEF8F9;
+
+    --border-color:hsl(217, 61%, 90%);
+    --box-shadox-color: hsl(217, 61%, 90%);
+    --box-shadow-size: 0px 2px 2px 0px;
+
+    --logo-color:hsl(3, 77%, 44%);
+    --logo-text-color:hsl(227, 75%, 14%);
+
+    --card-background-color:hsl(200, 60%, 99%);
+
+    --text-color: hsl(227, 75%, 14%);
+    --inverted-text-color: hsl(200, 60%, 99%);
+
+    --toggle-active-color: hsl(3, 77%, 44%);
+    --toggle-inactive-color:hsl(0, 0%, 78%);
+
+    --button-inactive-color: hsl(200, 60%, 99%);
+    --button-active-color: hsl(3, 77%, 44%);
+
+    --remove-button-color: hsl(200, 60%, 99%);
+
+    --theme-button-color:hsl(0, 0%, 93%);
+}

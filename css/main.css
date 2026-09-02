@@ -1,0 +1,200 @@
+body
+{
+    box-sizing: border-box;
+    margin:0;
+    padding:0;
+
+    background: linear-gradient(to bottom, var(--background-color-top) 0%, var(--background-color-bottom) 100%);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+    color: var(--text-color);
+
+    padding: var(--main-padding);
+    font-family: var(--font-family);
+}
+
+/* #region Header */
+
+header
+{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background-color: var(--card-background-color);
+    margin-bottom:50px;
+
+    padding:10px;
+    border-radius: 20px;
+}
+
+header svg path:nth-child(2)
+{
+    fill: var(--logo-text-color);
+}
+
+header svg path:nth-child(1)
+{
+    fill: var(--logo-color);
+}
+
+#theme-toggle
+{
+    border:none;
+    background-color: var(--theme-button-color);
+    border-radius: 10px;
+    aspect-ratio: 1;
+    padding:8px;
+}
+
+/* #endregion Header */
+
+/* #region Navigation */
+
+nav
+{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#filter-buttons button
+{
+    background-color:var(--button-inactive-color);
+    color:var(--text-color);
+
+    border-radius: 50px;
+    border:solid var(--border-color) 1px;
+    box-shadow: var(--box-shadow-size) var(--box-shadox-color);
+
+    padding:10px;
+}
+
+#filter-buttons .active
+{
+    background-color:var(--button-active-color) !important;
+    color:var(--inverted-text-color) !important;
+}
+
+/* #endregion Navigation */
+
+/* #region Extension List */
+
+#extension-list
+{
+    display:grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-gap: 20px;
+}
+
+.extension
+{
+    position:relative;
+    background-color: var(--card-background-color);
+    padding:15px;
+
+    border-radius: 15px;
+    border:solid var(--border-color) 1px;
+    box-shadow: var(--box-shadow-size) var(--box-shadox-color);
+}
+
+.extension-infos-box
+{
+    display:flex;
+
+    padding:5px;
+    margin-bottom:30px;
+}
+
+.extension-logo
+{
+    aspect-ratio: 1;
+}
+
+.extension-text-box
+{
+    padding:5px;
+}
+
+.extension-text-box > *
+{
+    margin:0 0 0 10px;
+}
+
+.extension-buttons-box
+{
+    display:flex;
+    justify-content: space-between;
+}
+
+.extension-remove
+{
+    background-color: var(--remove-button-color);
+    color:var(--text-color);
+
+    border-radius:20px;
+    padding:10px;
+
+    border:solid var(--border-color) 1px;
+}
+
+.toggle-inactive
+{
+    position:relative;
+    display:block;
+    background-color:var(--toggle-inactive-color);
+    width:48px;
+    height:24px;
+
+    border-radius:20px;
+    border:none;
+}
+
+.toggle-active
+{
+    position:relative;
+    display:block;
+    background-color:var(--toggle-active-color);
+    width:48px;
+    height:24px;
+
+    border-radius:20px;
+    border:none;
+}
+
+.extension-toggle-icon
+{
+    position:absolute;
+
+    top: 50%;
+    transform: translateY(-50%);
+
+    height:20px;
+    width:20px;
+    background-color:white;
+
+    border-radius:50px;
+}
+
+.toggle-active .extension-toggle-icon
+{
+    position:absolute;
+    right:2px;
+
+    top: 50%;
+    transform: translateY(-50%);
+
+    height:20px;
+    width:20px;
+    background-color:white;
+
+    border-radius:50px;
+}
+
+.toggle-inactive .extension-toggle-icon
+{
+    left:2px;
+}
+
+/* #endregion Extension List */
