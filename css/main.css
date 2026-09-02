@@ -14,6 +14,11 @@ body
     font-family: var(--font-family);
 }
 
+body > *
+{
+    transition:0.4s;
+}
+
 /* #region Header */
 
 header
@@ -96,7 +101,7 @@ nav
     display:grid;
     box-sizing: border-box;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    grid-gap: 20px;
+    grid-gap: 10px;
 }
 
 .extension
