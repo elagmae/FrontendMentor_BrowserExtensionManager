@@ -6,6 +6,8 @@ const extensionList = document.getElementById("extension-list");
 
 function FilterExtensions(filter)
 {
+    localStorage.setItem('filter', filter);
+
     [...filterParent.children].forEach(button =>
     {
         if(button.id == "filter-" + filter)
@@ -19,10 +21,10 @@ function FilterExtensions(filter)
         const toggle = extension.querySelector(".extension-buttons-box button:nth-child(2)");
         const isActive = toggle.classList.contains("toggle-active");
         
-        if(filter == "all") extension.style.display = "block";
+        if(filter == "all") extension.style.display = "";
 
-        else if(filter == "active" && isActive) extension.style.display = "block";
-        else if(filter == "inactive" && !isActive) extension.style.display = "block";
+        else if(filter == "active" && isActive) extension.style.display = "";
+        else if(filter == "inactive" && !isActive) extension.style.display = "";
         
         else extension.style.display = "none";
     });

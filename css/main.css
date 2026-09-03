@@ -101,6 +101,7 @@ nav
     display:grid;
     box-sizing: border-box;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    align-items: stretch;
     grid-gap: 10px;
 }
 
@@ -121,10 +122,10 @@ nav
 
 .extension-infos-box
 {
-    display:flex;
+    display: flex;
     min-height: 0;
-    align-items:self-start;
-    padding:5px;
+    align-items: flex-start;
+    padding: 5px;
 }
 
 .extension-logo
@@ -140,9 +141,11 @@ nav
 
 .extension-buttons-box
 {
-    display:flex;
+    display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-end;
+    
+    min-height: 34px;
 }
 
 .extension-remove

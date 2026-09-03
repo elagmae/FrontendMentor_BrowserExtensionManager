@@ -67,4 +67,9 @@ function CreateExtensionList(json)
 
         extensionList.appendChild(extensionElement);
     }
+
+    var currentFilter = localStorage.getItem("filter") || 'all';
+    console.log(currentFilter);
+
+    FilterExtensions(currentFilter);
 }
