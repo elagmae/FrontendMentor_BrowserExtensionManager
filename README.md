@@ -36,7 +36,7 @@ The challenge preview is shown on the left. My finished implementation is shown 
 ## Links
 
 - Challenge: [Browser extensions manager UI on Frontend Mentor](https://www.frontendmentor.io/challenges/browser-extension-manager-ui-yNZnOfsMAp)
-- Solution URL: Add your solution URL here
+- Solution URL: [Solution URL here](https://www.frontendmentor.io/solutions/responsive-browser-extension-manager-page-using-grids-and-flex-boxes-4eu6XEZSao)
 - Live Site URL: [Live Site here](https://elagmae.github.io/FrontendMentor_BrowserExtensionManager/)
 
 ## My process
@@ -81,7 +81,7 @@ I also practiced building a responsive card grid and using CSS custom properties
 
 ## Author
 
-- Frontend Mentor: [@Léa Pouthier](https://www.frontendmentor.io/profile/leapouthier)
+- Frontend Mentor: [@elagmae](https://www.frontendmentor.io/profile/elagmae)
 
 ## Acknowledgments
 
