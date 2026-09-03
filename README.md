@@ -1,113 +1,88 @@
-# Frontend Mentor - Browser extensions manager UI
+# Frontend Mentor - Browser extensions manager UI solution
 
-![Design preview for the Browser extensions manager UI coding challenge](./preview.jpg)
+This is my solution to the [Browser extensions manager UI challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/browser-extension-manager-ui-yNZnOfsMAp). The project is a responsive browser extension manager built with vanilla HTML, CSS, and JavaScript.
 
-## Welcome! 👋
+## Overview
 
-Thanks for checking out this front-end coding challenge.
+### The challenge
 
-[Frontend Mentor](https://www.frontendmentor.io) challenges help you improve your coding skills by building realistic projects.
+The goal was to build an interface where users can:
 
-**To do this challenge, you need a basic understanding of HTML, CSS and JavaScript.**
-
-## The challenge
-
-Your challenge is to build out this browser extension manager UI and get it looking as close to the design as possible.
-
-You can use any tools you like to help you complete the challenge. So if you've got something you'd like to practice, feel free to give it a go.
-
-We provide the data for the extensions in a local `data.json` file. So you can use that to add the data dynamically if you choose.
-
-Your users should be able to: 
-
-- Toggle extensions between active and inactive states
-- Filter active and inactive extensions
+- View a list of browser extensions loaded from JSON data
+- Toggle between light and dark themes
+- Filter extensions by all, active, or inactive status
 - Remove extensions from the list
-- Select their color theme
-- View the optimal layout for the interface depending on their device's screen size
-- See hover and focus states for all interactive elements on the page
+- Use the interface comfortably on mobile and desktop screen sizes
+- See clear hover and focus states for interactive elements
 
-### Want some support on the challenge? 
+### Before and after
 
-[Join our community](https://www.frontendmentor.io/community) and ask questions in the **#help** channel.
+The challenge preview is shown on the left. My finished implementation is shown on the right in both available themes.
 
-## Where to find everything
+| Before: challenge preview | After: my implementation |
+| --- | --- |
+| ![Frontend Mentor challenge preview](./screenshots/preview.jpg) | ![Light mode implementation](./screenshots/light-mode.png) |
 
-Your task is to build out the project to the designs inside the `/design` folder. You will find both a mobile and a desktop version of the design. 
+### Screenshots
 
-The designs are in JPG static format. Using JPGs will mean that you'll need to use your best judgment for styles such as `font-size`, `padding` and `margin`. 
+#### Light mode
 
-If you would like the Figma design file to gain experience using professional tools and build more accurate projects faster, you can [subscribe as a PRO member](https://www.frontendmentor.io/pro).
+![Browser extensions manager in light mode](./screenshots/light-mode.png)
 
-All the required assets for this project are in the `/assets` folder. The images are already exported for the correct screen size and optimized.
+#### Dark mode
 
-We also include variable and static font files for the required fonts for this project. You can choose to either link to Google Fonts or use the local font files to host the fonts yourself. Note that we've removed the static font files for the font weights that aren't needed for this project.
+![Browser extensions manager in dark mode](./screenshots/dark-mode.png)
 
-There is also a `style-guide.md` file containing the information you'll need, such as color palette and fonts.
+## Links
 
-## Using AI coding assistants
+- Challenge: [Browser extensions manager UI on Frontend Mentor](https://www.frontendmentor.io/challenges/browser-extension-manager-ui-yNZnOfsMAp)
+- Solution URL: Add your solution URL here
+- Live Site URL: [Live Site here](https://elagmae.github.io/FrontendMentor_BrowserExtensionManager/)
 
-We've included two files to help you if you're using AI coding assistants (like Claude, GitHub Copilot, Cursor, etc.) while working on this challenge:
+## My process
 
-- `AGENTS.md` - Contains detailed instructions for AI assistants on how to help you with this challenge. It's tailored to this challenge's difficulty level, so the AI will provide guidance appropriate to your learning stage—offering more support for beginner challenges and encouraging more independence on advanced ones.
-- `CLAUDE.md` - A pointer file that directs Claude-based tools to the AGENTS.md instructions.
+### Built with
 
-**How to use them:** You don't need to do anything! These files are automatically detected by most AI coding tools. The AI will read them and adjust its behavior to be a better learning partner—guiding you toward solutions rather than just giving you the answers.
+- Semantic HTML5 markup
+- CSS custom properties
+- CSS Grid and Flexbox
+- Responsive, mobile-first CSS
+- Vanilla JavaScript
+- Local JSON data loaded with `fetch`
+- `localStorage` for theme and filter preferences
+- Local Noto Sans font assets
 
-**Note:** These files are designed to help you *learn*, not to do the work for you. The AI is instructed to ask questions, give hints, and explain concepts rather than writing complete solutions.
+### What I learned
 
-## Building your project
+This was an approachable project overall, but creating the extension cards from the JSON file was the part I found most difficult. In particular, I had to work through how the JavaScript creates and connects each element, how the generated structure should match the CSS layout, and how to load the data correctly.
 
-Feel free to use any workflow that you feel comfortable with. Below is a suggested process, but do not feel like you need to follow these steps:
+I am especially proud that I used JSON data, `localStorage`, a theme toggle, and filter buttons for the first time. The theme and filter preferences are restored when the page is opened again:
 
-1. Initialize your project as a public repository on [GitHub](https://github.com/). Creating a repo will make it easier to share your code with the community if you need help. If you're not sure how to do this, [have a read-through of this Try Git resource](https://try.github.io/).
-2. Configure your repository to publish your code to a web address. This will also be useful if you need some help during a challenge as you can share the URL for your project with your repo URL. There are a number of ways to do this, and we provide some recommendations below.
-3. Look through the designs to start planning out how you'll tackle the project. This step is crucial to help you think ahead for CSS classes to create reusable styles.
-4. Before adding any styles, structure your content with HTML. Writing your HTML first can help focus your attention on creating well-structured content.
-5. Write out the base styles for your project, including general content styles, such as `font-family` and `font-size`.
-6. Start adding styles to the top of the page and work down. Only move on to the next section once you're happy you've completed the area you're working on.
+```js
+const currentFilter = localStorage.getItem('filter') || 'all';
+localStorage.setItem('theme', 'dark-mode');
+```
 
-## Deploying your project
+I also practiced building a responsive card grid and using CSS custom properties to keep the light and dark color themes organized.
 
-As mentioned above, there are many ways to host your project for free. Our recommended hosts are:
+### Continued development
 
-- [GitHub Pages](https://pages.github.com/)
-- [Vercel](https://vercel.com/)
-- [Netlify](https://www.netlify.com/)
+- Connect the generated Remove buttons to remove cards from the visible list.
+- Connect the generated extension toggles so their active state can be changed by the user.
+- Improve accessibility with more descriptive states for the toggle controls.
+- Add more robust empty-state handling when a filter has no matching extensions.
 
-You can host your site using one of these solutions or any of our other trusted providers. [Read more about our recommended and trusted hosts](https://www.frontendmentor.io/guides/hosting-your-solution).
+### Useful resources
 
-## Create a custom `README.md`
+- [Frontend Mentor](https://www.frontendmentor.io/) - The challenge brief and visual designs.
+- [MDN: Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) - Helpful reference for loading the local JSON file.
+- [MDN: Web Storage API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API) - Reference for saving theme and filter preferences.
+- [MDN: CSS Grid Layout](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_grid_layout) - Useful while creating the responsive extension card layout.
 
-We strongly recommend overwriting this `README.md` with a custom one. We've provided a template inside the [`README-template.md`](./README-template.md) file in this starter code.
+## Author
 
-The template provides a guide for what to add. A custom `README` will help you explain your project and reflect on your learnings. Please feel free to edit our template as much as you like.
+- Frontend Mentor: [@Léa Pouthier](https://www.frontendmentor.io/profile/leapouthier)
 
-Once you've added your information to the template, delete this file and rename the `README-template.md` file to `README.md`. That will make it show up as your repository's README file.
+## Acknowledgments
 
-## Submitting your solution
-
-Submit your solution on the platform for the rest of the community to see. Follow our ["Complete guide to submitting solutions"](https://www.frontendmentor.io/guides/how-to-submit-solutions) for tips on how to do this.
-
-Remember, if you're looking for feedback on your solution, be sure to ask questions when submitting it. The more specific and detailed you are with your questions, the higher the chance you'll get valuable feedback from the community.
-
-## Sharing your solution
-
-There are multiple places you can share your solution:
-
-1. Share your solution page in the **#finished-projects** channel of our [community](https://www.frontendmentor.io/community). 
-2. Share on [X (formerly Twitter)](https://x.com/frontendmentor) and mention **@frontendmentor**, including the repo and live URLs in your post. We'd love to take a look at what you've built and help share it around.
-3. Share your solution on [LinkedIn](https://www.linkedin.com/company/frontend-mentor/).
-4. Blog about your experience building your project. Writing about your workflow, technical choices, and talking through your code is a brilliant way to reinforce what you've learned. Great platforms to write on are [dev.to](https://dev.to/), [Hashnode](https://hashnode.com/), and [CodeNewbie](https://community.codenewbie.org/).
-
-We provide templates to help you share your solution once you've submitted it on the platform. Please do edit them and include specific questions when you're looking for feedback. 
-
-The more specific you are with your questions the more likely it is that another member of the community will give you feedback.
-
-## Got feedback for us?
-
-We love receiving feedback! We're always looking to improve our challenges and our platform. So if you have anything you'd like to mention, please email hi[at]frontendmentor[dot]io.
-
-This challenge is completely free. Please share it with anyone who will find it useful for practice.
-
-**Have fun building!** 🚀
+Thanks to Frontend Mentor for providing the design, assets, and a practical project for practicing frontend development.
