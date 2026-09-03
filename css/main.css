@@ -106,30 +106,31 @@ nav
 
 .extension
 {
-    position:relative;
+    position: relative;
     box-sizing: border-box;
     background-color: var(--card-background-color);
-    padding:15px;
+    padding: 15px;
 
     border-radius: 15px;
-    border:solid var(--border-color) 1px;
+    border: solid var(--border-color) 1px;
     box-shadow: var(--box-shadow-size) var(--box-shadox-color);
+
+    display: grid;
+    grid-template-rows: minmax(0, 1fr) auto;
 }
 
 .extension-infos-box
 {
     display:flex;
+    min-height: 0;
+    align-items:self-start;
     padding:5px;
 }
 
 .extension-logo
 {
     aspect-ratio: 1;
-}
-
-.extension-text-box
-{
-    padding:5px;
+    width:50px;
 }
 
 .extension-text-box > *
@@ -141,6 +142,7 @@ nav
 {
     display:flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 .extension-remove
