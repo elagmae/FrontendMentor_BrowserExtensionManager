@@ -11,6 +11,10 @@ body
     --background-color-bottom: #091540;
 
     --border-color:hsl(226, 11%, 37%);
+    --focus-border-color:hsl(3, 86%, 64%);
+    --focus-inset-border-color:black;
+    --focus-background-color:hsl(226, 25%, 17%);
+
     --box-shadox-color: hsl(227, 75%, 14%);
     --box-shadow-size: 0px 2px 2px 0px;
 
@@ -31,6 +35,9 @@ body
     --remove-button-color: hsl(226, 25%, 17%);
 
     --theme-button-color:hsl(225, 23%, 24%);
+
+    --hover-important-color:hsl(3, 86%, 64%);
+    --hover-normal-color:hsl(226, 11%, 37%);
 }
 
 .light-mode
@@ -39,6 +46,10 @@ body
     --background-color-bottom: #EEF8F9;
 
     --border-color:hsl(217, 61%, 90%);
+    --focus-border-color:hsl(3, 77%, 44%);
+    --focus-inset-border-color:white;
+    --focus-background-color:hsl(0, 0%, 93%);
+
     --box-shadox-color: hsl(217, 61%, 90%);
     --box-shadow-size: 0px 2px 2px 0px;
 
@@ -59,4 +70,7 @@ body
     --remove-button-color: hsl(200, 60%, 99%);
 
     --theme-button-color:hsl(0, 0%, 93%);
+
+    --hover-important-color:hsl(3, 77%, 44%);
+    --hover-normal-color:hsl(0, 0%, 78%);
 }

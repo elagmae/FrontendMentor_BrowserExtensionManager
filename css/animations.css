@@ -1,0 +1,41 @@
+.extension:hover
+{
+    transition:0.4s;
+    transform: translateY(-7px) scale(102%);
+    box-shadow: 0px 4px 8px 0px var(--box-shadox-color);
+}
+
+button:hover
+{
+    transform: scale(105%) !important;
+    box-shadow: 0px 4px 8px 0px var(--box-shadox-color) !important;
+    cursor:pointer;
+}
+
+.extension-remove:hover
+{
+    background-color: var(--hover-important-color) !important;
+    color:var(--inverted-text-color);
+}
+
+.extension-remove:focus
+{
+    background-color: var(--focus-background-color) !important;
+}
+
+.dark-mode #filter-buttons button:not(.active):hover, #theme-toggle:hover
+{
+    background-color: var(--hover-normal-color) !important;
+}
+
+.light-mode #filter-buttons button:not(.active):hover, #theme-toggle:hover
+{
+    opacity: 55% !important;
+}
+
+button:focus
+{
+    transition:0.4s;
+    box-shadow: 0 0 0 1.5px var(--focus-border-color) !important;
+    border:solid var(--focus-inset-border-color) 1.5px;
+}

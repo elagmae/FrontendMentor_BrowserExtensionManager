@@ -14,7 +14,7 @@ body
     font-family: var(--font-family);
 }
 
-body > *
+header > *, nav > *, main > *, button
 {
     transition:0.4s;
 }
@@ -150,7 +150,7 @@ nav
     background-color: var(--remove-button-color);
     color:var(--text-color);
 
-    border-radius:20px;
+    border-radius:40px;
     padding:10px;
 
     border:solid var(--border-color) 1px;
