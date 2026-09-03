@@ -15,6 +15,10 @@ button:hover
 .extension-remove:hover
 {
     background-color: var(--hover-important-color) !important;
+}
+
+.light-mode .extension-remove:hover
+{
     color:var(--inverted-text-color);
 }
 
