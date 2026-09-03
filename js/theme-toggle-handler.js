@@ -10,7 +10,7 @@ function UpdateThemePreference()
         document.body.classList.add("dark-mode");
         document.body.classList.remove("light-mode");
 
-        toggleThemeButton.innerHTML = `<img src="../assets/images/icon-sun.svg" alt="Light mode icon">`;
+        toggleThemeButton.innerHTML = `<img src="./assets/images/icon-sun.svg" alt="Light mode icon">`;
     }
 
     else
@@ -18,7 +18,7 @@ function UpdateThemePreference()
         document.body.classList.add("light-mode");
         document.body.classList.remove("dark-mode");
 
-        toggleThemeButton.innerHTML = `<img src="../assets/images/icon-moon.svg" alt="Dark mode icon">`;
+        toggleThemeButton.innerHTML = `<img src="./assets/images/icon-moon.svg" alt="Dark mode icon">`;
     }
 }
 
