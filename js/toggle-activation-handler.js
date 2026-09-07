@@ -15,4 +15,6 @@ function OnToggleClicked(toggle, json)
         toggle.classList.add("toggle-active");
         toggle.classList.remove("toggle-inactive");
     }
+
+    FilterExtensions(localStorage.getItem("filter") || 'all');
 }
