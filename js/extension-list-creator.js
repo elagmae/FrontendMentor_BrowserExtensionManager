@@ -4,7 +4,6 @@ async function LoadData()
 {
     const response = await fetch("./data.json");
     const json = await response.json();
-    console.log(json);
 
     CreateExtensionList(json);
 }
@@ -15,28 +14,34 @@ function CreateExtensionList(json)
 
     for(var i = 0; i < json.length; i++)
     {
-        var extension = json[i]; // Retreive every extension from the json array
+        const extension = json[i]; // Retreive every extension from the json array
 
         // Create extension elements and append them to extensionList
 
-        var extensionElement = document.createElement("div");
+        const extensionElement = document.createElement("div");
         extensionElement.classList.add("extension");
 
-        var extensionInfosBox = document.createElement("div");
+        if(localStorage.getItem(extension.name + "_removed"))
+        {
+            OnExtensionRemoved(extensionElement, extension);
+            continue;
+        }
+
+        const extensionInfosBox = document.createElement("div");
         extensionInfosBox.classList.add("extension-infos-box");
 
-        var extensionLogo = document.createElement("img");
+        const extensionLogo = document.createElement("img");
         extensionLogo.classList.add("extension-logo");
         extensionLogo.src = extension.logo;
         extensionLogo.alt = extension.name + " logo";
 
-        var extensionTextBox = document.createElement("div");
+        const extensionTextBox = document.createElement("div");
         extensionTextBox.classList.add("extension-text-box");
 
-        var extensionName = document.createElement("h2");
+        const extensionName = document.createElement("h2");
         extensionName.textContent = extension.name;
 
-        var extensionDescription = document.createElement("p");
+        const extensionDescription = document.createElement("p");
         extensionDescription.textContent = extension.description;
 
         extensionTextBox.appendChild(extensionName);
@@ -45,17 +50,27 @@ function CreateExtensionList(json)
         extensionInfosBox.appendChild(extensionLogo);
         extensionInfosBox.appendChild(extensionTextBox);
 
-        var extensionButtonsBox = document.createElement("div");
+        const extensionButtonsBox = document.createElement("div");
         extensionButtonsBox.classList.add("extension-buttons-box");
 
-        var extensionRemoveButton = document.createElement("button");
+        const extensionRemoveButton = document.createElement("button");
         extensionRemoveButton.classList.add("extension-remove");
         extensionRemoveButton.textContent = "Remove";
 
-        var extensionToggle = document.createElement("button");
-        extensionToggle.classList.add(extension.isActive ? "toggle-active" : "toggle-inactive");
+        extensionRemoveButton.onclick = () => OnExtensionRemoved(extensionElement, extension);
 
-        var extensionToggleIcon = document.createElement("span");
+        const extensionToggle = document.createElement("button");
+
+        if(localStorage.getItem(extension.name))
+            extension.isActive = localStorage.getItem(extension.name);
+
+        localStorage.setItem(extension.name, extension.isActive);
+
+        extensionToggle.classList.add(extension.isActive == true || extension.isActive == "true" ? "toggle-active" : "toggle-inactive");
+        
+        extensionToggle.onclick = () => OnToggleClicked(extensionToggle, extension);
+
+        const extensionToggleIcon = document.createElement("span");
         extensionToggleIcon.classList.add("extension-toggle-icon");
 
         extensionButtonsBox.appendChild(extensionRemoveButton);
@@ -68,8 +83,7 @@ function CreateExtensionList(json)
         extensionList.appendChild(extensionElement);
     }
 
-    var currentFilter = localStorage.getItem("filter") || 'all';
-    console.log(currentFilter);
+    const currentFilter = localStorage.getItem("filter") || 'all';
 
     FilterExtensions(currentFilter);
 }

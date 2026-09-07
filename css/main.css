@@ -115,8 +115,6 @@ nav
     border-radius: 15px;
     border: solid var(--border-color) 1px;
     box-shadow: var(--box-shadow-size) var(--box-shadox-color);
-
-    display: grid;
     grid-template-rows: minmax(0, 1fr) auto;
 }
 
@@ -163,7 +161,7 @@ nav
 {
     position:relative;
     display:block;
-    background-color:var(--toggle-inactive-color);
+    background-color:var(--toggle-inactive-color) !important;
     width:48px;
     height:24px;
 
@@ -175,7 +173,7 @@ nav
 {
     position:relative;
     display:block;
-    background-color:var(--toggle-active-color);
+    background-color:var(--toggle-active-color) !important;
     width:48px;
     height:24px;
 
