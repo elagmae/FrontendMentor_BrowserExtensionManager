@@ -1,3 +1,4 @@
+const extensionList = document.getElementById("extension-list");
 LoadData();
 
 async function LoadData()
@@ -6,12 +7,12 @@ async function LoadData()
     const json = await response.json();
 
     CreateExtensionList(json);
+
+    LoadFilterVariables(extensionList, json);
 }
 
 function CreateExtensionList(json) 
 {
-    const extensionList = document.getElementById("extension-list");
-
     for(var i = 0; i < json.length; i++)
     {
         const extension = json[i]; // Retreive every extension from the json array
@@ -66,7 +67,7 @@ function CreateExtensionList(json)
 
         localStorage.setItem(extension.name, extension.isActive);
 
-        extensionToggle.classList.add(extension.isActive == true || extension.isActive == "true" ? "toggle-active" : "toggle-inactive");
+        extensionToggle.classList.add(extension.isActive === true || extension.isActive === "true" ? "toggle-active" : "toggle-inactive");
         
         extensionToggle.onclick = () => OnToggleClicked(extensionToggle, extension);
 
@@ -81,6 +82,8 @@ function CreateExtensionList(json)
         extensionToggle.setAttribute("role", "switch");
         extensionToggle.setAttribute("aria-checked", String(extension.isActive));
         extensionToggle.setAttribute("aria-label", `Enable ${extension.name}`);
+
+        extensionRemoveButton.type = "button";
         extensionRemoveButton.setAttribute("aria-label", `Remove ${extension.name}`);
 
         extensionElement.appendChild(extensionInfosBox);
@@ -88,8 +91,4 @@ function CreateExtensionList(json)
 
         extensionList.appendChild(extensionElement);
     }
-
-    const currentFilter = localStorage.getItem("filter") || 'all';
-
-    FilterExtensions(currentFilter);
 }

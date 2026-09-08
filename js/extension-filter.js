@@ -2,8 +2,15 @@ const allFilter = document.getElementById("filter-all");
 const activeFilter = document.getElementById("filter-active");
 const inactiveFilter = document.getElementById("filter-inactive");
 const filterParent = document.getElementById("filter-buttons");
-const extensionList = document.getElementById("extension-list");
 
+let extensions = null;
+let json = null;
+
+function LoadFilterVariables(extensionList, jsonData)
+{
+    extensions = extensionList;
+    json = jsonData;
+}
 function FilterExtensions(filter)
 {
     localStorage.setItem('filter', filter);
@@ -16,16 +23,27 @@ function FilterExtensions(filter)
         else button.classList.remove("active");
     });
 
-    [...extensionList.children].forEach(extension =>
+    for(var i = 0; i < json.length; i++)
     {
-        const toggle = extension.querySelector(".extension-buttons-box button:nth-child(2)");
-        const isActive = toggle.classList.contains("toggle-active");
-        
-        if(filter == "all") extension.style.display = "";
+        const extensionData = json[i];
+        const extensionDiv = extensions.children[i];
 
-        else if(filter == "active" && isActive) extension.style.display = "";
-        else if(filter == "inactive" && !isActive) extension.style.display = "";
-        
-        else extension.style.display = "none";
-    });
+        console.log(extensionDiv);
+
+        if(localStorage.getItem(extensionData.name + "_removed"))
+            extensionDiv.style.display = "none";
+
+        else
+        {
+            const toggle = extensionDiv.querySelector(".extension-buttons-box button:nth-child(2)");
+            const isActive = toggle.classList.contains("toggle-active");
+            
+            if(filter == "all") extensionDiv.style.display = "grid";
+
+            else if(filter === "active" && isActive) extensionDiv.style.display = "grid";
+            else if(filter === "inactive" && !isActive) extensionDiv.style.display = "grid";
+            
+            else extensionDiv.style.display = "none";
+        }
+    };
 }
