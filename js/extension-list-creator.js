@@ -8,7 +8,7 @@ async function LoadData()
 
     CreateExtensionList(json);
 
-    LoadFilterVariables(extensionList = null, json = null);
+    LoadFilterVariables(extensionList, json);
 }
 
 function CreateExtensionList(json) 
