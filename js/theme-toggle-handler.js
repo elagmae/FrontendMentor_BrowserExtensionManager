@@ -5,7 +5,6 @@ toggleThemeButton.onclick = ToggleThemePreference;
 
 function UpdateThemePreference()
 {
-
     if(localStorage.getItem("theme") === "light-mode")
     {
         document.body.classList.add("light-mode");
