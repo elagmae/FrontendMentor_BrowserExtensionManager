@@ -1,6 +1,3 @@
-const allFilter = document.getElementById("filter-all");
-const activeFilter = document.getElementById("filter-active");
-const inactiveFilter = document.getElementById("filter-inactive");
 const filterParent = document.getElementById("filter-buttons");
 
 let extensions = null;
@@ -17,7 +14,7 @@ function FilterExtensions(filter)
 
     [...filterParent.children].forEach(button =>
     {
-        if(button.id == "filter-" + filter)
+        if(button.id === "filter-" + filter)
             button.classList.add("active");
 
         else button.classList.remove("active");
@@ -38,7 +35,7 @@ function FilterExtensions(filter)
             const toggle = extensionDiv.querySelector(".extension-buttons-box button:nth-child(2)");
             const isActive = toggle.classList.contains("toggle-active");
             
-            if(filter == "all") extensionDiv.style.display = "grid";
+            if(filter === "all") extensionDiv.style.display = "grid";
 
             else if(filter === "active" && isActive) extensionDiv.style.display = "grid";
             else if(filter === "inactive" && !isActive) extensionDiv.style.display = "grid";
