@@ -1,6 +1,7 @@
-#filter-buttons button
+button
 {
-    font-size:var(--paragraph-font-size);
+    font-family: inherit;
+    font-size:calc(var(--paragraph-font-size)/1.5);
     font-weight:500;
 }
 

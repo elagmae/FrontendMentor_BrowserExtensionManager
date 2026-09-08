@@ -77,6 +77,12 @@ function CreateExtensionList(json)
         extensionButtonsBox.appendChild(extensionToggle);
         extensionToggle.appendChild(extensionToggleIcon);
 
+        extensionToggle.type = "button";
+        extensionToggle.setAttribute("role", "switch");
+        extensionToggle.setAttribute("aria-checked", String(extension.isActive));
+        extensionToggle.setAttribute("aria-label", `Enable ${extension.name}`);
+        extensionRemoveButton.setAttribute("aria-label", `Remove ${extension.name}`);
+
         extensionElement.appendChild(extensionInfosBox);
         extensionElement.appendChild(extensionButtonsBox);
 
